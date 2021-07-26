@@ -1,0 +1,8 @@
+<div class="field">
+    <%= f.label :strain ,class:'label-control'%>
+    <%= f.collection_select :strain_id, Strain.all, :id, :name, :include_blank => true, class: 'form-control ' %>
+</div>
+<div class="field">
+    <%= f.label :proportion,class:'label-control' %>
+    <%= f.number_field :proportion,class:'form-control' %>
+</div>

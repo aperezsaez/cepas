@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Wines</h1>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Img</th>
+      <th>Strain</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @wines.each do |wine| %>
+    <tr>
+      <td class="text-dark"><%= wine.name %></td>
+      <td class="text-dark"><%= wine.img %></td>
+      <td class="text-dark">
+        <% wine.wines_strains.each do |win|%>
+        <%= win.strain.name %>-<%= win.proportion %><span>%|</span>
+        <% end %>
+      </td>
+      <td class="text-dark"><%= link_to 'Show', wine %></td>
+      <td class="text-dark"><%= link_to 'Edit', edit_wine_path(wine) %></td>
+      <td class="text-dark"><%= link_to 'Destroy', wine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wine', new_wine_path,class:'btn btn-primary text-white' %>
