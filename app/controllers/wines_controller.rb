@@ -1,5 +1,5 @@
 class WinesController < ApplicationController
-  before_action :set_wine, only: %i[ show edit update destroy ]
+  before_action :set_wine, only: %i[ show edit update destroy calification ]
 
   # GET /wines or /wines.json
   def index
@@ -9,6 +9,8 @@ class WinesController < ApplicationController
   # GET /wines/1 or /wines/1.json
   def show
   end
+
+ 
 
   # GET /wines/new
   def new

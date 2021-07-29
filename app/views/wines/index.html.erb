@@ -17,8 +17,8 @@
       <td class="text-dark"><%= wine.name %></td>
       <td class="text-dark"><%= wine.img %></td>
       <td class="text-dark">
-        <% wine.wines_strains.each do |win|%>
-        <%= win.strain.name %>-<%= win.proportion %><span>%|</span>
+        <% wine.wines_strains.order(:strain_id).map do |win|%>
+        <%= win.strain.name %>-(<%= win.proportion %><span>%)|</span>
         <% end %>
       </td>
       <td class="text-dark"><%= link_to 'Show', wine %></td>
@@ -30,5 +30,4 @@
 </table>
 
 <br>
-
 <%= link_to 'New Wine', new_wine_path,class:'btn btn-primary text-white' %>
