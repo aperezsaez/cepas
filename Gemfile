@@ -5,6 +5,7 @@ ruby '2.6.3'
 gem "cocoon"
 gem 'jquery-rails'
 gem 'devise'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
 # Use postgresql as the database for Active Record
@@ -53,6 +54,9 @@ group :development do
 end
 
 group :test do
+# gem 'rspec'
+gem 'rspec-rails'
+gem 'rails-controller-testing'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'

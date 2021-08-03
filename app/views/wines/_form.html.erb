@@ -21,6 +21,11 @@
   <%= form.url_field :img,class:'form-control' %>
 </div>
 
+<div class="field">
+  <%= form.label :score,class:'label-control' %>
+  <%= form.number_field :score, :in =>0..100, :step => 1 %>
+</div>
+
 
 <div class="field" id="wines_strains">
   <%= form.fields_for :wines_strains do |ff|  %>
