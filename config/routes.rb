@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :magazines
   resources :oenologists
-  devise_for :users
+  devise_for :users,  :controllers => { registrations: 'users/registrations', sessions: 'users/sessions' }
   resources :strains
   resources :straings
   resources :wines
